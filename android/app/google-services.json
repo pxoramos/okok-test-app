@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "849014790323",
+    "project_id": "okoktestapp",
+    "storage_bucket": "okoktestapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849014790323:android:561a10b99d04ac95a738c6",
+        "android_client_info": {
+          "package_name": "com.okokmobileapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849014790323-f1gda4kflgjd1i4aqg1sofa5nkpjgimd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.okokmobileapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "849014790323-pipod4ljodko4ctdebm4uhfmfeqc66lq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUudFv8Ia_FdhS0zoDy-WgPZKASpswpas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849014790323-pipod4ljodko4ctdebm4uhfmfeqc66lq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
