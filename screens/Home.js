@@ -2,6 +2,7 @@ import React from 'react';
 import type {Node} from 'react';
 
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -18,6 +19,8 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+
+import {AuthContext} from '../utils/contexts';
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -46,6 +49,8 @@ const Section = ({children, title}): Node => {
 };
 
 const Home = () => {
+  const {signOut} = React.useContext(AuthContext);
+
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -63,6 +68,7 @@ const Home = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
+          <Button title="Sign out" onPress={signOut} />
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.js</Text> to change this
             screen and then come back to see your edits.as

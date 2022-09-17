@@ -1,29 +1,27 @@
 import create from 'zustand';
 import produce from 'immer';
 
-export const authStore = create((set, get) => ({
-  isLoading: true,
-  isSignout: false,
-  userToken: null,
-  restoreToken: payload =>
-    set(
-      produce(draft => {
-        draft.userToken = payload;
-        draft.isLoading = false;
-      }),
-    ),
-  signIn: payload =>
-    set(
-      produce(draft => {
-        draft.isSignout = false;
-        draft.userToken = payload;
-      }),
-    ),
-  signout: payload =>
-    set(
-      produce(draft => {
-        draft.isSignout = true;
-        draft.userToken = null;
-      }),
-    ),
-}));
+export const authStore = create(
+  (set, get) => ({
+    isLoading: true, //true when the app has not yet determined if user is signed-in/out to firebase
+    isSignout: false,
+    userToken: null,
+    onAuthStateChanged: user =>
+      set(
+        produce(draft => {
+          draft.userToken = user;
+          draft.isLoading = false;
+          draft.isSignout = false;
+        }),
+      ),
+    signOut: () =>
+      set(
+        produce(draft => {
+          draft.isSignout = true;
+        }),
+      ),
+  }),
+  {
+    name: 'auth',
+  },
+);
