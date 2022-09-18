@@ -9,11 +9,11 @@ import {
   Divider,
 } from '@react-native-material/core';
 
-const LoginScreen = ({navigation}) => {
+const SignupScreen = ({navigation}) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  const {signIn} = React.useContext(AuthContext);
+  const {signUp} = React.useContext(AuthContext);
 
   return (
     <Stack spacing={10} style={{margin: 16, flex: 1, justifyContent: 'center'}}>
@@ -24,19 +24,19 @@ const LoginScreen = ({navigation}) => {
         onChangeText={setPassword}
         secureTextEntry
       />
-      <Button title="LOGIN" onPress={() => signIn({email, password})} />
+      <Button title="SIGNUP" onPress={() => signUp({email, password})} />
       <Divider style={{marginTop: 20}} />
       <Stack direction="row" style={{marginTop: 20, alignSelf: 'center'}}>
-        <Text variant="body1">Need an account? </Text>
+        <Text variant="body1">Already a user? </Text>
         <Text
           variant="body1"
           style={{textDecorationLine: 'underline'}}
-          onPress={() => navigation.navigate('Signup')}>
-          SIGN UP
+          onPress={() => navigation.navigate('Login')}>
+          LOGIN
         </Text>
       </Stack>
     </Stack>
   );
 };
 
-export default LoginScreen;
+export default SignupScreen;

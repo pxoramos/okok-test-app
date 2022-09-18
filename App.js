@@ -18,6 +18,7 @@ import {AuthContext} from './utils/contexts';
 
 import HomeScreen from './screens/Home';
 import LoginScreen from './screens/LoginScreen';
+import SignupScreen from './screens/SignupScreen';
 import SplashScreen from './screens/SplashScreen';
 
 const Stack = createNativeStackNavigator();
@@ -91,6 +92,7 @@ const App: () => Node = () => {
                 animationTypeForReplace: authState.signOut ? 'pop' : 'push',
               }}>
               <Stack.Screen name="Login" component={LoginScreen} />
+              <Stack.Screen name="Signup" component={SignupScreen} />
             </Stack.Group>
           ) : (
             <Stack.Screen name="Home" component={HomeScreen} />
