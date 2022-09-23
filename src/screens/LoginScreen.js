@@ -1,6 +1,5 @@
-import React from 'react';
-import {View} from 'react-native';
-import {AuthContext} from '../utils/contexts';
+import React, {useContext, useState} from 'react';
+import {AuthContext} from '_context/AuthProvider';
 import {
   Stack,
   TextInput,
@@ -10,10 +9,10 @@ import {
 } from '@react-native-material/core';
 
 const LoginScreen = ({navigation}) => {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const {signIn} = React.useContext(AuthContext);
+  const {signIn} = useContext(AuthContext);
 
   return (
     <Stack spacing={10} style={{margin: 16, flex: 1, justifyContent: 'center'}}>

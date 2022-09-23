@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import type {Node} from 'react';
 
 import {
@@ -20,7 +20,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import {AuthContext} from '../utils/contexts';
+import {AuthContext} from '_context/AuthProvider';
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -49,7 +49,7 @@ const Section = ({children, title}): Node => {
 };
 
 const Home = () => {
-  const {signOut} = React.useContext(AuthContext);
+  const {signOut} = useContext(AuthContext);
 
   const isDarkMode = useColorScheme() === 'dark';
 

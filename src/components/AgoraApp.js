@@ -6,7 +6,7 @@ import {
   ClientRoleType,
 } from 'react-native-agora';
 
-import {requestCameraAndAudioPermission} from '../utils/permissions/livestreaming';
+import {requestCameraAndAudioPermission} from '_utils/permissions/livestreaming';
 
 const appId = '';
 
